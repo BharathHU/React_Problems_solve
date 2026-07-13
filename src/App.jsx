@@ -170,16 +170,37 @@
 
 // export default App
 
-import React from 'react'
-import Condional from './ConditionalOperator/Condional'
-import Password from './ShowandHidePassword/Password'
+// import React from 'react'
+// import Condional from './ConditionalOperator/Condional'
+// import Password from './ShowandHidePassword/Password'
 
-function App() {
+// function App() {
+//   return (
+//     <div>
+//       <Condional isLoggedin={false} username="Bharath"/>
+//     <Password/>
+//     </div>
+//   )
+// }
+
+// export default App
+import React,{useState} from 'react'
+import Home  from './LoginLogoutToggle/Home'
+import Profile from './LoginLogoutToggle/Profile'
+
+const App = () => {
+  const[isLoggin,setIsLoggin]=useState(false)
+
+  const Toggle=()=>{
+    setIsLoggin(!isLoggin)
+  }
   return (
     <div>
-      <Condional isLoggedin={false} username="Bharath"/>
-    <Password/>
+      <button onClick={Toggle}>{isLoggin? 'logout':'login'}</button>
+      <hr />
+      {isLoggin? <Profile/>:<Home/>}
     </div>
+
   )
 }
 

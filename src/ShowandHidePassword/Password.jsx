@@ -1,45 +1,48 @@
-import React, { useState } from "react";
+import React,{useState} from 'react'
+
 
 function Password() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState("");
-  const [passwords, setPasswords] = useState([]);
+  const[showpassword,setShowpassword]=useState(false)
+const[password,setPassword]=useState('')
+const[data,setData]=useState([])
+const[error,setError]=useState('')
 
-  const showPass = () => {
-    setShowPassword(!showPassword);
-  };
+const addItem = () => {
+  if (password.trim() === "") {
+    setError("Password is required");
+    return;
+  }
 
-  const addPassword = () => {
-    if (password.trim() !== "") {
-      setPasswords([...passwords, password]);
-      setPassword("");
-    }
-  };
+  if (password.length < 6) {
+    setError("Password must be at least 6 characters");
+    return;
+  }
 
+  setError("");
+  setData([...data, password]);
+  setPassword("");
+};
+
+
+
+  const ShowHide=()=>{
+    setShowpassword(!showpassword)
+  }
   return (
     <div>
-      <label>Enter your password</label>
-      <br />
-
-      <input
-        type={showPassword ? "text" : "password"}
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <button onClick={showPass}>
-        {showPassword ? "Hide Password" : "Show Password"}
-      </button>
-
-      <button onClick={addPassword}>Add</button>
-
-      <ul>
-        {passwords.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <input type={showpassword? 'text':'password'} onChange={(e)=>setPassword(e.target.value)} value={password}/>
+      <button onClick={ShowHide}>{showpassword? 'hide' : 'Show'}</button>
+<button onClick={addItem}>Add</button>
+<h3 style={{color:'red'}}>{error}</h3>
+<ul>
+  {
+    data.map((value,index)=>(
+      <li key={index}>{value}</li>
+    ))
+  }
+</ul>
     </div>
-  );
+  )
 }
 
-export default Password;
+export default Password

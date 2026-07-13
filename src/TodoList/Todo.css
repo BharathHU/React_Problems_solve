@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  min-height: 100vh;
+}
+
+/* Center Container */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card */
+
+.todo-card {
+  width: 420px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+
+  animation: popup .8s ease;
+}
+
+/* Heading */
+
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 30px;
+}
+
+.title span {
+  color: #007bff;
+}
+
+/* Input */
+
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  outline: none;
+  transition: .3s;
+}
+
+.input-box input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,.3);
+}
+
+/* Add Button */
+
+.input-box button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.input-box button:hover {
+  background: #0056d2;
+  transform: scale(1.05);
+}
+
+/* List */
+
+ul {
+  list-style: none;
+}
+
+/* Task */
+
+.task {
+  background: #f5f7fa;
+  margin: 12px 0;
+  padding: 12px 15px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  animation: slide .5s ease;
+  transition: .3s;
+}
+
+.task:hover {
+  transform: translateX(8px);
+  background: #eaf4ff;
+}
+
+.task span {
+  word-break: break-word;
+}
+
+/* Delete */
+
+.task button {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.task button:hover {
+  background: darkred;
+  transform: scale(1.08);
+}
+
+/* Card Animation */
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Task Animation */
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

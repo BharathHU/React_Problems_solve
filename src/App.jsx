@@ -184,24 +184,54 @@
 // }
 
 // export default App
-import React,{useState} from 'react'
-import Home  from './LoginLogoutToggle/Home'
-import Profile from './LoginLogoutToggle/Profile'
+// import React,{useState} from 'react'
+// import Home  from './LoginLogoutToggle/Home'
+// import Profile from './LoginLogoutToggle/Profile'
 
-const App = () => {
-  const[isLoggin,setIsLoggin]=useState(false)
+// const App = () => {
+//   const[isLoggin,setIsLoggin]=useState(false)
 
-  const Toggle=()=>{
-    setIsLoggin(!isLoggin)
-  }
+//   const Toggle=()=>{
+//     setIsLoggin(!isLoggin)
+//   }
+//   return (
+//     <div>
+//       <button onClick={Toggle}>{isLoggin? 'logout':'login'}</button>
+//       <hr />
+//       {isLoggin? <Profile/>:<Home/>}
+//     </div>
+
+//   )
+// }
+
+// export default App
+// import React from 'react'
+// import List from './Lists/List'
+// import Table from './Table/Table'
+// import Example1 from './ComponentMountUnmount/Example1'
+
+// function App() {
+//   return (
+//     <div>
+//       {/* <List/>
+//       <Table/> */}
+//       <Example1/>
+//     </div>
+//   )
+// }
+
+// export default App
+import React from 'react'
+import US from './UseEffect/US'
+
+function App() {
   return (
     <div>
-      <button onClick={Toggle}>{isLoggin? 'logout':'login'}</button>
-      <hr />
-      {isLoggin? <Profile/>:<Home/>}
+      <US/>
     </div>
-
   )
 }
 
 export default App
+
+

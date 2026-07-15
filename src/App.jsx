@@ -222,12 +222,16 @@
 
 // export default App
 import React from 'react'
+import APIcall from './APIcall/Product'
 import US from './UseEffect/US'
+import DigitalClock from './DigitalClock/DigitalClock'
 
 function App() {
   return (
     <div>
-      <US/>
+      {/* <US/> */}
+      {/* <APIcall/> */}
+      <DigitalClock/>
     </div>
   )
 }

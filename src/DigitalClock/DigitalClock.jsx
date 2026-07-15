@@ -28,7 +28,7 @@ const styles = {
     borderRadius: '50%',
     margin: '10px 0',
     textAlign: 'center',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: 'green',
   },
   clock: {
     fontSize: '2rem',
